@@ -1,0 +1,4 @@
+docker run --name patient-service-db -e POSTGRES_USER=admin_user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=db -p 5000:5432 -it --mount type=bind,source="D:/3Kali/ChrisBlakely/patient-management/db_volumes/patient-service-db",target="/var/lib/postgresql" --network internal postgres:latest
+
+docker network create internal
+c967ea1c50a5258d8991e84843e1bf1a60a5c109eaca545109a553b49c12fbd4
