@@ -28,7 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
-	</properties>
+    </properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -76,18 +76,6 @@
 
     </dependencies>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>codehaus-plugins</id>
-            <url>https://nexus.codehaus.org/content/repositories/releases/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 
     <build>
         <extensions>
@@ -96,12 +84,6 @@
                 <groupId>kr.motd.maven</groupId>
                 <artifactId>os-maven-plugin</artifactId>
                 <version>1.7.0</version>
-            </extension>
-
-            <extension>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>os-maven-plugin</artifactId>
-                <version>1.7.1</version>
             </extension>
         </extensions>
         <plugins>

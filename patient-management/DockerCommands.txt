@@ -1,5 +1,12 @@
 docker build -t patient-service:latest .
 docker stop patient-service
 docker rm patient-service
-docker run -d --name patient-service --network internal -p 4001:4001 -e SPRING_DATASOURCE_URL=jdbc:postgresql://patient-service-db:5432/db -e SPRING_DATASOURCE_USERNAME=admin_user -e SPRING_DATASOURCE_PASSWORD=password -e SPRING_JPA_HIBERNATE_DDL_AUTO=update -e SPRING_SQL_INIT_MODE=always patient-service:latest
+docker run -d --name patient-service --network internal -p 4000:4000 -e SPRING_DATASOURCE_URL=jdbc:postgresql://patient-service-db:5432/db -e SPRING_DATASOURCE_USERNAME=admin_user -e SPRING_DATASOURCE_PASSWORD=password -e SPRING_JPA_HIBERNATE_DDL_AUTO=update -e SPRING_SQL_INIT_MODE=always patient-service:latest
 7e2e600d5b5cc35cbeb325296535e1875bd75f4d66e8a482a5e44f93826bdc19
+
+docker build -t billing-service:latest .
+docker stop billing-service
+docker rm billing-service
+docker run -d --name billing-service --network internal -p 4002:4002 -p 9001:9001 billing-service:latest
+72815c5a5350adc8baff39ec873f454d70fecea8164dd21c9184bab9f92374a5
+
